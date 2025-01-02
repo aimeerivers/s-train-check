@@ -107,6 +107,14 @@ for (const station in stations) {
       console.log(`Train ${train.TrainId} is not an S-Train`);
     }
 
+    if (train.LineName === null) {
+      console.log(`Train ${train.TrainId} has no line name`);
+    }
+
+    if (!["A", "B", "BX", "C", "E", "F", "H"].includes(train.LineName)) {
+      console.log(`Train ${train.TrainId} is on an unknown line: ${train.LineName}`);
+    }
+
     if (train.TargetStation.length > 1) {
       console.log(`Train ${train.TrainId} has multiple target stations`);
     }
