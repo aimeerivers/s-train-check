@@ -132,7 +132,11 @@ for (const station in stations) {
     }
 
     for (const route of train.Routes) {
-      if (route.UnitType !== "SA" && route.UnitType !== "SE") {
+      if (route.UnitType === null) {
+        console.log(`Train ${train.TrainId} has no unit type`);
+      }
+
+      if (!["SA", "SE"].includes(route.UnitType)) {
         console.log(`Train ${train.TrainId} has an unknown unit type: ${route.UnitType}`);
       }
 
