@@ -145,6 +145,10 @@ for (const station in stations) {
           if (routeStation.IsCancelled) {
             console.log(`Train ${train.TrainId} to ${stations[train.TargetStation[0]]} in ${train.MinutesToDeparture} minutes is not stopping at ${stations[routeStation.StationId]}`);
           }
+
+          if (routeStation.StationId === "HØV") {
+            console.log(`Train ${train.TrainId} to ${stations[train.TargetStation[0]]} in ${train.MinutesToDeparture} minutes is stopping at Høvelte`);
+          }
         }
       }
     }
